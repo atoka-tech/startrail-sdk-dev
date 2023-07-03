@@ -4,7 +4,11 @@ import { useState } from "react";
 import { getStartrailSdkInstance } from "@/utils/get-startrail-sdk-instance";
 import { Props } from "./types";
 
-export default function SdkLogin({ authAction, loginProvider }: Props) {
+export default function SdkLogin({
+  authAction,
+  loginProvider,
+  withModal,
+}: Props) {
   const [sdk, setSdk] = useState<ReturnType<
     typeof getStartrailSdkInstance
   > | null>(null);
@@ -12,7 +16,11 @@ export default function SdkLogin({ authAction, loginProvider }: Props) {
   const [loading, setLoading] = useState(false);
 
   const login = async () => {
-    const ins = getStartrailSdkInstance({ authAction, loginProvider });
+    const ins = getStartrailSdkInstance({
+      authAction,
+      loginProvider,
+      withModal,
+    });
 
     setLoading(true);
 

@@ -10,6 +10,7 @@ export interface Args {
   authAction?: AuthAction;
   wallet?: WalletType;
   loginProvider?: LoginProvider;
+  withModal?: boolean;
 }
 
 export type Util = (args: Args) => Startrail;

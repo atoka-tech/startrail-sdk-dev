@@ -41,6 +41,55 @@ export default function Home() {
           loginProvider="email_password"
         />
       </div>
+
+      <h1 className="text-lg font-bold mb-5 mt-10">
+        withModal: trueのパターン
+      </h1>
+
+      <div className="grid gap-5">
+        <SdkLogin />
+        <SdkLogin
+          authAction={{ login: false, signup: true }}
+          withModal={true}
+        />
+        <SdkLogin
+          authAction={{ login: true, signup: false }}
+          withModal={true}
+        />
+        <SdkLogin authAction={{ login: true, signup: true }} withModal={true} />
+        <SdkLogin loginProvider="google" withModal={true} />
+        <SdkLogin loginProvider="email_password" withModal={true} />
+        <SdkLogin
+          authAction={{ login: false, signup: true }}
+          loginProvider="google"
+          withModal={true}
+        />
+        <SdkLogin
+          authAction={{ login: true, signup: false }}
+          loginProvider="google"
+          withModal={true}
+        />
+        <SdkLogin
+          authAction={{ login: true, signup: true }}
+          loginProvider="google"
+          withModal={true}
+        />
+        <SdkLogin
+          authAction={{ login: false, signup: true }}
+          loginProvider="email_password"
+          withModal={true}
+        />
+        <SdkLogin
+          authAction={{ login: true, signup: false }}
+          loginProvider="email_password"
+          withModal={true}
+        />
+        <SdkLogin
+          authAction={{ login: true, signup: true }}
+          loginProvider="email_password"
+          withModal={true}
+        />
+      </div>
     </main>
   );
 }

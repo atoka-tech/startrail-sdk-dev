@@ -6,7 +6,8 @@ export const getStartrailSdkInstance: Util = ({
   locale = "ja",
   authAction = undefined,
   wallet = "startrail",
-  loginProvider = "email_password",
+  loginProvider = undefined,
+  withModal = false,
 }) => {
   const {
     NEXT_PUBLIC_GOGH_API_HOSTNAME,
@@ -26,6 +27,7 @@ export const getStartrailSdkInstance: Util = ({
     auth0Domain: NEXT_PUBLIC_AUTH0_DOMAIN,
     auth0TorusConfigKey: NEXT_PUBLIC_AUTH0_TORUS_CONFIG_KEY,
     loginProvider,
+    withModal,
   });
 
   return sdk;
