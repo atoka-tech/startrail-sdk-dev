@@ -5,10 +5,9 @@ import type {
   AuthAction,
 } from "@startbahn/startrail-sdk-js/types";
 
-interface Args {
-  locale: "ja" | "en";
-  authAction: AuthAction;
-  callbackUrl?: string;
+export interface Args {
+  locale?: "ja" | "en";
+  authAction?: AuthAction;
   wallet?: WalletType;
   loginProvider?: LoginProvider;
 }

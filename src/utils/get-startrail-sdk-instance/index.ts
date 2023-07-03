@@ -3,9 +3,8 @@ import type { StartrailEnv } from "@startbahn/startrail-sdk-js/types";
 import type { Util } from "./types";
 
 export const getStartrailSdkInstance: Util = ({
-  locale,
-  authAction,
-  callbackUrl,
+  locale = "ja",
+  authAction = undefined,
   wallet = "startrail",
   loginProvider = "email_password",
 }) => {
@@ -27,7 +26,6 @@ export const getStartrailSdkInstance: Util = ({
     auth0Domain: NEXT_PUBLIC_AUTH0_DOMAIN,
     auth0TorusConfigKey: NEXT_PUBLIC_AUTH0_TORUS_CONFIG_KEY,
     loginProvider,
-    callbackUrl,
   });
 
   return sdk;
