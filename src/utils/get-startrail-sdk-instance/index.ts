@@ -9,23 +9,15 @@ export const getStartrailSdkInstance: Util = ({
   loginProvider = undefined,
   withModal = false,
 }) => {
-  const {
-    NEXT_PUBLIC_GOGH_API_HOSTNAME,
-    NEXT_PUBLIC_STARTRAIL_ENV,
-    NEXT_PUBLIC_AUTH0_CLIENT_ID,
-    NEXT_PUBLIC_AUTH0_DOMAIN,
-    NEXT_PUBLIC_AUTH0_TORUS_CONFIG_KEY,
-  } = process.env;
-
   const sdk = new Startrail({
     authAction,
     wallet,
-    env: NEXT_PUBLIC_STARTRAIL_ENV as StartrailEnv,
+    env: process.env.NEXT_PUBLIC_STARTRAIL_ENV as StartrailEnv,
     lang: locale,
-    apiPath: NEXT_PUBLIC_GOGH_API_HOSTNAME + "/api/v1",
-    auth0ClientId: NEXT_PUBLIC_AUTH0_CLIENT_ID,
-    auth0Domain: NEXT_PUBLIC_AUTH0_DOMAIN,
-    auth0TorusConfigKey: NEXT_PUBLIC_AUTH0_TORUS_CONFIG_KEY,
+    apiPath: process.env.NEXT_PUBLIC_GOGH_API_HOSTNAME + "/api/v1",
+    auth0ClientId: process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID,
+    auth0Domain: process.env.NEXT_PUBLIC_AUTH0_DOMAIN,
+    auth0TorusConfigKey: process.env.NEXT_PUBLIC_AUTH0_TORUS_CONFIG_KEY,
     loginProvider,
     withModal,
   });
