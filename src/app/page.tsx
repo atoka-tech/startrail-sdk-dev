@@ -108,6 +108,14 @@ export default function Home() {
           withModal={true}
         />
       </div>
+
+      <h1 className="text-lg font-bold mb-5 mt-10">
+        MetaMask（authActionやloginProviderの設定によって挙動変わらないので、一つだけ）
+      </h1>
+
+      <div className="grid gap-5">
+        <SdkLogin name="C-1" wallet="metamask" />
+      </div>
     </main>
   );
 }

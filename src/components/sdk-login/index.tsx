@@ -6,6 +6,7 @@ import { Props } from "./types";
 
 export default function SdkLogin({
   name,
+  wallet,
   authAction,
   loginProvider,
   withModal,
@@ -18,6 +19,7 @@ export default function SdkLogin({
 
   const login = async () => {
     const ins = getStartrailSdkInstance({
+      wallet,
       authAction,
       loginProvider,
       withModal,
