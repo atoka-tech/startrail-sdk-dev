@@ -5,6 +5,7 @@ import { getStartrailSdkInstance } from "@/utils/get-startrail-sdk-instance";
 import { Props } from "./types";
 
 export default function SdkLogin({
+  name,
   authAction,
   loginProvider,
   withModal,
@@ -62,6 +63,7 @@ export default function SdkLogin({
 
   return (
     <div className="relative border grid gap-2 p-4">
+      <h2 className="text-lg font-bold mb-1">{name}</h2>
       <button className="button" onClick={login}>
         {getLabel()}
       </button>
