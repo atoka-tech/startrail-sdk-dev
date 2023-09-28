@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { getStartrailSdkInstance } from "@/utils/get-startrail-sdk-instance";
 import { Props } from "./types";
+import { useEnvStore } from "@/stores/env";
 
 export default function SdkLogin({
   name,
@@ -16,6 +17,7 @@ export default function SdkLogin({
   > | null>(null);
   const [eoa, setEOA] = useState("");
   const [loading, setLoading] = useState(false);
+  const env = useEnvStore((state) => state.env);
 
   const login = async () => {
     const ins = getStartrailSdkInstance({
@@ -23,6 +25,7 @@ export default function SdkLogin({
       authAction,
       loginProvider,
       withModal,
+      env,
     });
 
     setLoading(true);

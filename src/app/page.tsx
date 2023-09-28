@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import EnvSwitcher from "@/components/env-switcher";
 
 const SdkLogin = dynamic(() => import("../components/sdk-login"), {
   ssr: false,
@@ -8,6 +9,8 @@ export default function Home() {
   return (
     <main className="container mx-auto py-10">
       <h1 className="text-lg font-bold mb-5">SDKポップアップ動作テスト</h1>
+
+      <EnvSwitcher />
 
       <div className="grid gap-5">
         <SdkLogin name="A-1" />
