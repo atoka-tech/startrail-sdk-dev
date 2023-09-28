@@ -27,7 +27,6 @@ export default function EnvSwitcher() {
         />
         <span>staging</span>
       </label>
-
       <label className="flex gap-2">
         <input
           type="radio"
