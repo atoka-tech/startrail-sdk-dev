@@ -16,6 +16,7 @@ export default function SdkLogin({
     typeof getStartrailSdkInstance
   > | null>(null);
   const [eoa, setEOA] = useState("");
+  const [typeOfLogin, setTypeOfLogin] = useState("");
   const [loading, setLoading] = useState(false);
   const env = useEnvStore((state) => state.env);
 
@@ -39,6 +40,12 @@ export default function SdkLogin({
       setLoading(false);
 
       return;
+    }
+
+    const info = await ins.getUserInfo();
+
+    if (info) {
+      setTypeOfLogin(info.typeOfLogin || "");
     }
 
     setEOA(res[0]);
@@ -74,6 +81,7 @@ export default function SdkLogin({
       </button>
 
       <p>eoa: {eoa || "-"}</p>
+      <p>typeOfLogin: {typeOfLogin || "-"}</p>
 
       {eoa && sdk && (
         <button className="button-secondary" onClick={logout}>

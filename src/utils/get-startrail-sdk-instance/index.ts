@@ -31,7 +31,7 @@ export const getStartrailSdkInstance: Util = ({
       env === "production"
         ? process.env.NEXT_PUBLIC_AUTH0_TORUS_CONFIG_KEY_PROD
         : process.env.NEXT_PUBLIC_AUTH0_TORUS_CONFIG_KEY_STG,
-    loginProvider,
+    loginProvider: loginProvider ? [loginProvider] : undefined,
     withModal,
     // customUi: {
     //   logoUrl: "https://placehold.jp/150x150.png?text=Logo",
