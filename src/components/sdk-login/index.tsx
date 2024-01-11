@@ -58,6 +58,7 @@ export default function SdkLogin({
 
     await sdk.logout();
 
+    setTypeOfLogin("");
     setEOA("");
     setSdk(null);
   };
