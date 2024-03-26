@@ -9,8 +9,8 @@ export default function SdkLogin({
   name,
   wallet,
   authAction,
-  loginProvider,
   withModal,
+  loginProviders = [],
 }: Props) {
   const [sdk, setSdk] = useState<ReturnType<
     typeof getStartrailSdkInstance
@@ -24,7 +24,7 @@ export default function SdkLogin({
     const ins = getStartrailSdkInstance({
       wallet,
       authAction,
-      loginProvider,
+      loginProviders,
       withModal,
       env,
     });
@@ -67,9 +67,10 @@ export default function SdkLogin({
     const authActionLabel = authAction
       ? `[authAction] login: ${authAction.login}, signup: ${authAction.signup}`
       : "[authAction] 指定なし";
-    const loginProviderLabel = loginProvider
-      ? `[loginProvider] ${loginProvider}`
-      : "[loginProvider] 指定なし";
+    const loginProviderLabel =
+      loginProviders.length > 0
+        ? `[loginProvider] ${loginProviders.join(" | ")}`
+        : "[loginProvider] 指定なし";
 
     return `${authActionLabel}  ${loginProviderLabel}`;
   };

@@ -1,6 +1,6 @@
 import type { Startrail } from "@startbahn/startrail-sdk-js";
 import type {
-  LoginProvider,
+  TLoginProviders,
   WalletType,
   AuthAction,
   StartrailEnv,
@@ -11,7 +11,7 @@ export interface Args {
   locale?: "ja" | "en";
   authAction?: AuthAction;
   wallet?: WalletType;
-  loginProvider?: LoginProvider;
+  loginProviders: TLoginProviders;
   withModal?: boolean;
 }
 

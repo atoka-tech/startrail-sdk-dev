@@ -17,37 +17,37 @@ export default function Home() {
         <SdkLogin name="A-2" authAction={{ login: false, signup: true }} />
         <SdkLogin name="A-3" authAction={{ login: true, signup: false }} />
         <SdkLogin name="A-4" authAction={{ login: true, signup: true }} />
-        <SdkLogin name="A-5" loginProvider="google" />
-        <SdkLogin name="A-6" loginProvider="email_password" />
+        <SdkLogin name="A-5" loginProviders={["google"]} />
+        <SdkLogin name="A-6" loginProviders={["email_password"]} />
         <SdkLogin
           name="A-7"
           authAction={{ login: false, signup: true }}
-          loginProvider="google"
+          loginProviders={["google"]}
         />
         <SdkLogin
           name="A-8"
           authAction={{ login: true, signup: false }}
-          loginProvider="google"
+          loginProviders={["google"]}
         />
         <SdkLogin
           name="A-9"
           authAction={{ login: true, signup: true }}
-          loginProvider="google"
+          loginProviders={["google"]}
         />
         <SdkLogin
           name="A-10"
           authAction={{ login: false, signup: true }}
-          loginProvider="email_password"
+          loginProviders={["email_password"]}
         />
         <SdkLogin
           name="A-11"
           authAction={{ login: true, signup: false }}
-          loginProvider="email_password"
+          loginProviders={["email_password"]}
         />
         <SdkLogin
           name="A-12"
           authAction={{ login: true, signup: true }}
-          loginProvider="email_password"
+          loginProviders={["email_password"]}
         />
       </div>
 
@@ -56,7 +56,7 @@ export default function Home() {
       </h1>
 
       <div className="grid gap-5">
-        <SdkLogin name="B-1" />
+        <SdkLogin name="B-1" withModal={true} />
         <SdkLogin
           name="B-2"
           authAction={{ login: false, signup: true }}
@@ -72,52 +72,72 @@ export default function Home() {
           authAction={{ login: true, signup: true }}
           withModal={true}
         />
-        <SdkLogin name="B-5" loginProvider="google" withModal={true} />
-        <SdkLogin name="B-6" loginProvider="email_password" withModal={true} />
+        <SdkLogin name="B-5" loginProviders={["google"]} withModal={true} />
+        <SdkLogin
+          name="B-6"
+          loginProviders={["email_password"]}
+          withModal={true}
+        />
         <SdkLogin
           name="B-7"
           authAction={{ login: false, signup: true }}
-          loginProvider="google"
+          loginProviders={["google"]}
           withModal={true}
         />
         <SdkLogin
           name="B-8"
           authAction={{ login: true, signup: false }}
-          loginProvider="google"
+          loginProviders={["google"]}
           withModal={true}
         />
         <SdkLogin
           name="B-9"
           authAction={{ login: true, signup: true }}
-          loginProvider="google"
+          loginProviders={["google"]}
           withModal={true}
         />
         <SdkLogin
           name="B-10"
           authAction={{ login: false, signup: true }}
-          loginProvider="email_password"
+          loginProviders={["email_password"]}
           withModal={true}
         />
         <SdkLogin
           name="B-11"
           authAction={{ login: true, signup: false }}
-          loginProvider="email_password"
+          loginProviders={["email_password"]}
           withModal={true}
         />
         <SdkLogin
           name="B-12"
           authAction={{ login: true, signup: true }}
-          loginProvider="email_password"
+          loginProviders={["email_password"]}
+          withModal={true}
+        />
+      </div>
+
+      <h1 className="text-lg font-bold mb-5 mt-10">その他自由な検証枠</h1>
+
+      <div className="grid gap-5">
+        <SdkLogin
+          name="C-1"
+          authAction={{ login: true, signup: false }}
+          loginProviders={[
+            "facebook",
+            "google",
+            "email_password",
+            "email_passwordless",
+          ]}
           withModal={true}
         />
       </div>
 
       <h1 className="text-lg font-bold mb-5 mt-10">
-        MetaMask（authActionやloginProviderの設定によって挙動変わらないので、一つだけ）
+        MetaMask（authActionやloginProvidersの設定によって挙動変わらないので、一つだけ）
       </h1>
 
       <div className="grid gap-5">
-        <SdkLogin name="C-1" wallet="metamask" />
+        <SdkLogin name="Z-1" wallet="metamask" />
       </div>
     </main>
   );

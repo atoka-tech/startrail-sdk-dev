@@ -4,6 +4,6 @@ export interface Props {
   name: string;
   wallet?: Args["wallet"];
   authAction?: Args["authAction"];
-  loginProvider?: Args["loginProvider"];
+  loginProviders?: Args["loginProviders"];
   withModal?: Args["withModal"];
 }
